@@ -33,7 +33,7 @@ Route::get('/livedata', [AdminController::class, 'livedata'])->name('livedata.in
 Route::get('/users', [UserController::class, 'index'])->name('users.index')->middleware('auth');
 //Admin
 //Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard')->middleware(['auth', 'admin']);
-Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard')->middleware(['auth', 'can:admin']);
+Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard')->middleware(['auth', 'admin']);
 // Roles CRUD
 Route::get('/roles/create', [RoleController::class, 'create'])->name('roles.create')->middleware('auth');
 Route::get('/roles', [RoleController::class, 'index'])->name('roles.index')->middleware('auth');
@@ -135,16 +135,16 @@ Route::get('/verification-and-clearance-of-registration-export', [ParticipantCon
 
 
 // ECX Membership ID and Certificate Issued CRUD
-Route::get('/ecs-membership-id-and-certificate-issued/create', [ParticipantController::class, 'create'])->name('participants.create')->middleware('auth');
-Route::get('/ecs-membership-id-and-certificate-issued', [ParticipantController::class, 'index'])->name('participants.index')->middleware('auth');
-Route::post('/ecs-membership-id-and-certificate-issued', [ParticipantController::class, 'store'])->name('participants.store')->middleware('auth');
-Route::get('/ecs-membership-id-and-certificate-issued/{participant}', [ParticipantController::class, 'show'])->name('participants.show')->middleware('auth');
-Route::get('/ecs-membership-id-and-certificate-issued/{participant}/edit', [ParticipantController::class, 'edit'])->name('participants.edit')->middleware('auth');
-Route::put('/ecs-membership-id-and-certificate-issued/{participant}', [ParticipantController::class, 'update'])->name('participants.update')->middleware('auth');
-Route::delete('/ecs-membership-id-and-certificate-issued/{participant}', [ParticipantController::class, 'destroy'])->name('participants.destroy')->middleware('auth');
+Route::get('/ecx-membership-id-and-certificate-issued/create', [ParticipantController::class, 'create'])->name('participants.create')->middleware('auth');
+Route::get('/ecx-membership-id-and-certificate-issued', [ParticipantController::class, 'index'])->name('participants.index')->middleware('auth');
+Route::post('/ecx-membership-id-and-certificate-issued', [ParticipantController::class, 'store'])->name('participants.store')->middleware('auth');
+Route::get('/ecx-membership-id-and-certificate-issued/{participant}', [ParticipantController::class, 'show'])->name('participants.show')->middleware('auth');
+Route::get('/ecx-membership-id-and-certificate-issued/{participant}/edit', [ParticipantController::class, 'edit'])->name('participants.edit')->middleware('auth');
+Route::put('/ecx-membership-id-and-certificate-issued/{participant}', [ParticipantController::class, 'update'])->name('participants.update')->middleware('auth');
+Route::delete('/ecx-membership-id-and-certificate-issued/{participant}', [ParticipantController::class, 'destroy'])->name('participants.destroy')->middleware('auth');
 // Participants Upload Form
-Route::get('ecs-membership-id-and-certificate-issued-upload-form', [ParticipantController::class, 'showUploadForm'])->name('participants.upload.form')->middleware('auth');
+Route::get('ecx-membership-id-and-certificate-issued-upload-form', [ParticipantController::class, 'showUploadForm'])->name('participants.upload.form')->middleware('auth');
 // Participants Upload
-Route::post('/ecs-membership-id-and-certificate-issued-upload', [ParticipantController::class, 'upload'])->name('participants.upload')->middleware('auth');
+Route::post('/ecx-membership-id-and-certificate-issued-upload', [ParticipantController::class, 'upload'])->name('participants.upload')->middleware('auth');
 // Participants Export
-Route::get('/ecs-membership-id-and-certificate-issued-export', [ParticipantController::class, 'export'])->name('participants.export')->middleware('auth');
+Route::get('/ecx-membership-id-and-certificate-issued-export', [ParticipantController::class, 'export'])->name('participants.export')->middleware('auth');

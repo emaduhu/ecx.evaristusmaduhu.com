@@ -14,10 +14,9 @@ class RoleController extends Controller
 {
     public function index()
     {
-        $editing = false;
         $roles = Role::where('deleted_at', null)->orderBy('created_at', 'DESC')->paginate(10);
 
-        return view('roles.index', compact('roles', 'editing'));
+        return view('roles.index', compact('roles'));
     }
 
     public function create()
@@ -29,10 +28,11 @@ class RoleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
-            'slug' => 'required|string|max:10',
+            'name' => 'required|string|max:25',
+            'slug' => 'required|string|max:25',
             'description' => 'required|string|max:255',
         ]);
+
         $role = new Role();
         $role->name = $request->name;
         $role->slug = $request->slug;
@@ -62,23 +62,23 @@ class RoleController extends Controller
 //        $this->authorize('role.edit');
 
         $request->validate([
-            'name' => 'required|string|max:255',
-            'slug' => 'required|string|max:10',
+            'name' => 'required|string|max:25',
+            'slug' => 'required|string|max:25',
             'description' => 'required|string|max:255',
         ]);
 
-        $role = new Role();
+
+        $role = Role::where('id', $id)->firstOrFail();
         $role->name = $request->name;
         $role->slug = $request->slug;
         $role->description = $request->description;
         $role->save();
-
-        return redirect()->route('roles.index')->with('success', 'Roles file Updated successfully.');
+        return redirect()->route('roles.index')->with('success', 'Role updated successfully.');
     }
 
     public function destroy($id)
     {
-//        $this->authorize('role.delete');
+//        $this->authorize('can.delete');
 
         $role = Role::where('id', $id)->firstOrFail();
         $role->deleted_at = now();

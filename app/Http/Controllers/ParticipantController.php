@@ -53,7 +53,7 @@ class ParticipantController extends Controller
 
     public function edit($id)
     {
-        $this->authorize('participant.edit');
+//        $this->authorize('participant.edit');
         $editing = true;
         $participant = Participant::where('deleted_at', null)->where('id', $id)->first();
         return view('participants.create', compact(['editing', 'participant']));
@@ -61,7 +61,7 @@ class ParticipantController extends Controller
 
     public function update($id, Request $request)
     {
-        $this->authorize('participant.edit');
+//        $this->authorize('participant.edit');
 
         $request->validate([
             'name' => 'required',
@@ -82,7 +82,7 @@ class ParticipantController extends Controller
 
     public function destroy($id)
     {
-        $this->authorize('can.delete');
+//        $this->authorize('can.delete');
 
         $participant = Participant::where('id', $id)->firstOrFail();
         $participant->deleted_at = now();

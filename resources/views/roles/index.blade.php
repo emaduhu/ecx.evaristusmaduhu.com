@@ -24,22 +24,14 @@
                     <div class="row justify-content-end m-2">
                         <div class="col-sm-3">
                             <!-- Second column content -->
-<!--                            <a class="nav-link" href="{{route('roles.create')}}">Add-->
-<!--                                Role-->
-<!--                            </a>-->
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                Add Role
-                            </button>
+                            <a class="nav-link" href="{{route('roles.create')}}">Add
+                                Role
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="card-body">
-
-                    <!-- Modal -->
-                    @include('roles.role-form')
-
                     <table class="table" id="roles-table" class="table table-bordered">
                         <thead>
                         <tr>
@@ -55,8 +47,8 @@
                             <td>{{ $role->name }}</td>
                             <td>{{ $role->slug }}</td>
                             <td>{{ $role->description }}</td>
-                           <td>
-                                <div class="row gap-md-1">
+                            <td>
+                                <div class="row">
                                     <div class="col-md-3">
                                         <form method="GET"
                                               action="{{route('roles.show', $role->id)}}">

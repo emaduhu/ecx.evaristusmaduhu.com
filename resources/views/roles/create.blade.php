@@ -28,7 +28,13 @@
                 </div>
 
                 <div class="card-body">
-                   @include('roles.role-form')
+                    <div class="container">
+                        <div class="row justify-content-center m-2">
+                            <div class="col-sm-8">
+                                @include('roles.role-form')
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -40,8 +46,6 @@
 <script>
     $(document).ready(function () {
         $('#roles-table').DataTable();
-
-        alert("Home maduhu ***");
     });
 </script>
 @endsection
