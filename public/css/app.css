@@ -1,0 +1,31 @@
+/* Define custom color variables */
+:root {
+    --custom-primary-color: #277142;
+}
+
+/* Override Bootstrap's primary color */
+.btn-custom-primary {
+    color: #fff;
+    background-color: var(--custom-primary-color);
+    border-color: var(--custom-primary-color);
+}
+
+.btn-custom-primary:hover {
+    background-color: darken(var(--custom-primary-color), 10%);
+    border-color: darken(var(--custom-primary-color), 10%);
+}
+
+/* Define custom text-primary color */
+.text-custom-primary {
+    /*color: #9dc947; !* Your custom color code *!*/
+    color: #277142; /* Your custom color code */
+}
+
+/* Define custom text-bg-primary color */
+.text-bg-custom-primary {
+    font-size: 18px;
+    background-color: #277142; /* Your custom background color code */
+    color: #fff; /* Text color to ensure readability */
+    padding: 16px 8px; /* Adjust padding as needed */
+    border-radius: 8px; /* Add rounded corners for better appearance */
+}
