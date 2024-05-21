@@ -15,7 +15,6 @@ class RoleController extends Controller
     public function index()
     {
         $roles = Role::where('deleted_at', null)->orderBy('created_at', 'DESC')->paginate(10);
-
         return view('roles.index', compact('roles'));
     }
 
@@ -37,6 +36,7 @@ class RoleController extends Controller
         $role->name = $request->name;
         $role->slug = $request->slug;
         $role->description = $request->description;
+        $role->deleted_at = null;
         $role->save();
         return redirect()->route('roles.index')->with('success', 'Role added successfully.');
     }

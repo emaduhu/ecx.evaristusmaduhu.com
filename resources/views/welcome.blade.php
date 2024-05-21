@@ -900,14 +900,14 @@
                     @else
                     <a
                         href="{{ url('livedata') }}"
-                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#277142] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                        class="text-custom-primary rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#277142] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                     >
                         Live Trade
                     </a>
 
                     <a
                         href="{{ route('login') }}"
-                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#277142] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                        class="text-custom-primary rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#277142] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                     >
                         Log in
                     </a>
@@ -915,7 +915,7 @@
                     @if (Route::has('register'))
                     <a
                         href="{{ route('register') }}"
-                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#277142] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                        class="text-custom-primary rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#277142] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                     >
                         Create Access Account
                     </a>
@@ -1179,7 +1179,8 @@
             </main>
 
             <footer class="py-16 text-center text-sm text-black dark:text-white/70">
-                Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+<!--                Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})-->
+                ECX v{{ 1.0 }}
             </footer>
         </div>
     </div>

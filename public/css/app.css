@@ -59,6 +59,7 @@
 }
 
 .custom-input:focus {
+    border-radius: 4px;
     border-color: #4CAF50; /* Change border color on focus */
     box-shadow: 0 0 0 0.2rem rgb(157, 201, 71); /* Change box shadow on focus */
 }
@@ -68,3 +69,4 @@
     background-color: #277142; /* Example blue color */
     border-color: #277142; /* Example blue color */
 }
+
